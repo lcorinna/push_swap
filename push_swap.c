@@ -6,7 +6,7 @@
 /*   By: lcorinna <lcorinna@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/04 15:13:04 by lcorinna          #+#    #+#             */
-/*   Updated: 2022/01/16 12:37:45 by lcorinna         ###   ########.fr       */
+/*   Updated: 2022/01/16 19:23:31 by lcorinna         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,19 +55,17 @@ void	ft_push_swap(t_list **a, t_list **b)
 
 	i = ft_lstsize(*a);
 	if (i == 2)
-	{
 		ft_sort_for_two(a);
-		ft_lstclear_for_ps(a);
-	}
-	// else if (i == 3)
-	// 	ft_sort_for_thee(a);
-	// a = NULL;
-	b = NULL;
-	//ft_view_the_stack(*a, *b); //the_magic_of_visualization
-	//sorting_center(argc, lst);
+	else if (i == 3)
+		ft_sort_for_thee(a);
+	else if (i == 4)
+		ft_sort_for_four(a, b);
+	else if (i == 5)
+		ft_sort_for_five(a, b);
+	ft_view_the_stack(*a, *b); //the_magic_of_visualization
 	//ft_lstclear_for_ps(a); //when you're done, don't forget to clear the list
-	//ft_lstclear_for_ps(b); //when you're done, don't forget to clear the list
-	write(2, "So far, so good\n", 16);
+	// ft_lstclear_for_ps(b); //when you're done, don't forget to clear the list
+	ft_chek_on_sort(a);
 }
 
 int	main(int argc, char **argv)
@@ -75,7 +73,6 @@ int	main(int argc, char **argv)
 	t_list	*a;
 	t_list	*b;
 	int		n;
-	//int	i = 0;
 
 	b = NULL;
 	n = 1;
@@ -86,14 +83,12 @@ int	main(int argc, char **argv)
 	}
 	if (ft_pars(argv, n))
 		return (0);
-	// while (argv[i])
-	// 	printf("%s\n", argv[i++]);
 	if (argc < 2)
 		return (0);
 	ft_mk_lst(argv, &a, n);
 	ft_view_the_stack(a, b); //the_magic_of_visualization
 	if (ft_chek_on_sort(&a))
-		return (0);
+		ft_sort_done(&a);
 	ft_push_swap(&a, &b);
 	return (0);
 }

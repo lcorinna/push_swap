@@ -6,7 +6,7 @@
 /*   By: lcorinna <lcorinna@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/11 14:47:58 by lcorinna          #+#    #+#             */
-/*   Updated: 2022/01/15 20:20:31 by lcorinna         ###   ########.fr       */
+/*   Updated: 2022/01/16 18:39:40 by lcorinna         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,7 +57,10 @@ void	ft_pb(t_list **a, t_list **b)
 	tmp = ft_lstnew_for_ps((*a)->content);
 	ft_lstadd_front(b, tmp);
 	if ((*a)->next == NULL)
+	{
 		free(*a);
+		*a = NULL;
+	}
 	else if ((*a)->next != NULL)
 	{
 		save = (*a)->next;
@@ -75,7 +78,10 @@ void	ft_pa(t_list **a, t_list **b)
 	tmp = ft_lstnew_for_ps((*b)->content);
 	ft_lstadd_front(a, tmp);
 	if ((*b)->next == NULL)
+	{
 		free(*b);
+		*b = NULL;
+	}
 	else if ((*b)->next != NULL)
 	{
 		save = (*b)->next;
