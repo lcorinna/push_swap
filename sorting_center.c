@@ -6,7 +6,7 @@
 /*   By: lcorinna <lcorinna@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/15 16:17:56 by lcorinna          #+#    #+#             */
-/*   Updated: 2022/01/16 18:47:38 by lcorinna         ###   ########.fr       */
+/*   Updated: 2022/01/17 14:07:23 by lcorinna         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,9 @@ void	ft_sort_for_two(t_list **lst)
 
 void	ft_sort_for_thee(t_list **lst)
 {
+	if ((*lst)->content < (*lst)->next->content \
+	&& (*lst)->next->content < (*lst)->next->next->content) //123
+		return ;
 	if ((*lst)->content > (*lst)->next->content \
 	&& (*lst)->next->content > (*lst)->next->next->content) //321 done
 	{
@@ -40,51 +43,55 @@ void	ft_sort_for_thee(t_list **lst)
 		ft_sa(lst);
 }
 
-void	ft_sort_for_four(t_list **a, t_list **b)
+void	ft_sort_for_four(t_list **a, t_list **b, long long i)
 {
 	t_list		*tmp;
-	long long	i;
 
 	tmp = *a;
 	i = tmp->content;
-	while (tmp)
+	while (tmp->next)
 	{
 		if (tmp->next && i > tmp->next->content)
 			i = tmp->next->content;
 		tmp = tmp->next;
 	}
-	tmp = *a;
-	while (i != tmp->content)
-	{
-		tmp = tmp->next;
-		ft_ra(a);
-	}
+	if (i == tmp->content)
+		ft_rra(a);
+	else
+		ft_sorting_assistant(tmp, a, i);
 	ft_pb(a, b);
 	ft_sort_for_thee(a);
 	ft_pa(a, b);
 }
 
-void	ft_sort_for_five(t_list **a, t_list **b)
+void	ft_sort_for_five(t_list **a, t_list **b, long long i)
 {
 	t_list		*tmp;
-	long long	i;
 
 	tmp = *a;
 	i = tmp->content;
-	while (tmp)
+	while (tmp->next)
 	{
 		if (tmp->next && i < tmp->next->content)
 			i = tmp->next->content;
 		tmp = tmp->next;
 	}
+	if (i == tmp->content)
+		ft_rra(a);
+	else
+		ft_sorting_assistant(tmp, a, i);
+	ft_pb(a, b);
+	ft_sort_for_four(a, b, i);
+	ft_pa(a, b);
+	ft_ra(a);
+}
+
+void	ft_sorting_assistant(t_list *tmp, t_list **a, long long i)
+{
 	tmp = *a;
 	while (i != tmp->content)
 	{
 		tmp = tmp->next;
 		ft_ra(a);
 	}
-	ft_pb(a, b);
-	ft_sort_for_four(a, b);
-	ft_pa(a, b);
-	ft_ra(a);
 }

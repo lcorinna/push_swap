@@ -6,7 +6,7 @@
 /*   By: lcorinna <lcorinna@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/04 15:13:04 by lcorinna          #+#    #+#             */
-/*   Updated: 2022/01/16 19:23:31 by lcorinna         ###   ########.fr       */
+/*   Updated: 2022/01/17 17:10:05 by lcorinna         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,14 +30,14 @@ void	ft_view_the_stack(t_list *a, t_list *b) //promise me that before defending 
 		printf("%d:", line);
 		if (a)
 		{
-			printf("		%llu", a->content);
+			printf("		%lld", a->content);
 			a = a->next;
 		}
 		else
 			printf("		");
 		if (b)
 		{
-			printf("		%llu\n", b->content);
+			printf("		%lld\n", b->content);
 			b = b->next;
 		}
 		else
@@ -51,17 +51,17 @@ void	ft_view_the_stack(t_list *a, t_list *b) //promise me that before defending 
 
 void	ft_push_swap(t_list **a, t_list **b)
 {
-	int	i;
+	long long	i;
 
-	i = ft_lstsize(*a);
+	i = (long long) ft_lstsize(*a);
 	if (i == 2)
 		ft_sort_for_two(a);
 	else if (i == 3)
 		ft_sort_for_thee(a);
 	else if (i == 4)
-		ft_sort_for_four(a, b);
+		ft_sort_for_four(a, b, i);
 	else if (i == 5)
-		ft_sort_for_five(a, b);
+		ft_sort_for_five(a, b, i);
 	ft_view_the_stack(*a, *b); //the_magic_of_visualization
 	//ft_lstclear_for_ps(a); //when you're done, don't forget to clear the list
 	// ft_lstclear_for_ps(b); //when you're done, don't forget to clear the list

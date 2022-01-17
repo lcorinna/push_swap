@@ -6,7 +6,7 @@
 /*   By: lcorinna <lcorinna@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/06 16:30:55 by lcorinna          #+#    #+#             */
-/*   Updated: 2022/01/16 18:45:11 by lcorinna         ###   ########.fr       */
+/*   Updated: 2022/01/17 14:07:01 by lcorinna         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,8 +47,9 @@ int			ft_strrchr_ps(char *s, int c);
 int			ft_chek_on_sort(t_list **lst);
 void		ft_sort_for_two(t_list **lst);
 void		ft_sort_for_thee(t_list **lst);
-void		ft_sort_for_four(t_list **a, t_list **b);
-void		ft_sort_for_five(t_list **a, t_list **b);
+void		ft_sort_for_four(t_list **a, t_list **b, long long i);
+void		ft_sort_for_five(t_list **a, t_list **b, long long i);
+void		ft_sorting_assistant(t_list *tmp, t_list **a, long long i);
 void		ft_input_error(char *str, int i);
 void		ft_malloc_not_allocate(char *str, int i);
 void		ft_sort_done(t_list **lst);
