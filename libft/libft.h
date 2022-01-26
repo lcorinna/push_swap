@@ -6,7 +6,7 @@
 /*   By: lcorinna <lcorinna@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/25 22:40:44 by lcorinna          #+#    #+#             */
-/*   Updated: 2022/01/15 13:19:28 by lcorinna         ###   ########.fr       */
+/*   Updated: 2022/01/26 11:18:04 by lcorinna         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,9 @@
 
 typedef struct s_list
 {
-	long long		content;
+	long long		num;
+	int				index;
+	int				score;
 	struct s_list	*next;
 }	t_list;
 

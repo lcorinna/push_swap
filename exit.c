@@ -6,14 +6,14 @@
 /*   By: lcorinna <lcorinna@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/16 13:07:22 by lcorinna          #+#    #+#             */
-/*   Updated: 2022/01/17 17:08:27 by lcorinna         ###   ########.fr       */
+/*   Updated: 2022/01/26 19:04:20 by lcorinna         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
 void	ft_input_error(char *str, int i)
-{
+{	
 	ft_putstr_fd(str, i);
 	exit (5);
 }

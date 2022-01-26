@@ -6,14 +6,15 @@
 #    By: lcorinna <lcorinna@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/01/11 14:43:07 by lcorinna          #+#    #+#              #
-#    Updated: 2022/01/17 17:08:37 by lcorinna         ###   ########.fr        #
+#    Updated: 2022/01/23 13:56:22 by lcorinna         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME_S = push_swap
 
 PUSH_SWAP = push_swap.c rotate_down.c rotate_up.c swap_and_push.c pars.c \
-working_with_a_list.c check.c sorting_center.c exit.c
+working_with_a_list.c check.c sorting_center.c exit.c large_sorting_room.c \
+search_functions.c part_of_a_large_sorting.c
 
 OBJ_PS = $(PUSH_SWAP:.c=.o)
 

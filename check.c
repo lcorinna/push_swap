@@ -6,7 +6,7 @@
 /*   By: lcorinna <lcorinna@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/07 16:00:04 by lcorinna          #+#    #+#             */
-/*   Updated: 2022/01/16 16:05:42 by lcorinna         ###   ########.fr       */
+/*   Updated: 2022/01/26 11:18:41 by lcorinna         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ int	ft_chek_on_sort(t_list **lst)
 	tmp = *lst;
 	while (tmp && tmp->next)
 	{
-		if (tmp->next && tmp->content > tmp->next->content)
+		if (tmp->next && tmp->num > tmp->next->num)
 			return (0);
 		tmp = tmp->next;
 	}

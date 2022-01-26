@@ -6,7 +6,7 @@
 /*   By: lcorinna <lcorinna@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/04 15:13:04 by lcorinna          #+#    #+#             */
-/*   Updated: 2022/01/17 17:10:05 by lcorinna         ###   ########.fr       */
+/*   Updated: 2022/01/26 17:48:01 by lcorinna         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,22 +22,26 @@ void	ft_view_the_stack(t_list *a, t_list *b) //promise me that before defending 
 	j = ft_lstsize(b);
 	if (j > i)
 		i = j;
-	line = 0;
-	printf("__________________________________________\n\n");
-	printf("stack		A		B\n\n");
+	line = 1;
+	printf("_____________________________________________________________\n\n");
+	printf("stack		A	index	score		B	index	score\n\n");
 	while (i != 0)
 	{
 		printf("%d:", line);
 		if (a)
 		{
-			printf("		%lld", a->content);
+			printf("		%lld", a->num);
+			printf("	%d", a->index);
+			printf("	%d", a->score);
 			a = a->next;
 		}
 		else
-			printf("		");
+			printf("				");
 		if (b)
 		{
-			printf("		%lld\n", b->content);
+			printf("		%lld", b->num);
+			printf("	%d", b->index);
+			printf("	%d\n", b->score);
 			b = b->next;
 		}
 		else
@@ -45,7 +49,7 @@ void	ft_view_the_stack(t_list *a, t_list *b) //promise me that before defending 
 		i--;
 		line++;
 	}
-	printf("__________________________________________\n\n");
+	printf("_____________________________________________________________\n\n");
 	return ;
 }
 
@@ -62,6 +66,8 @@ void	ft_push_swap(t_list **a, t_list **b)
 		ft_sort_for_four(a, b, i);
 	else if (i == 5)
 		ft_sort_for_five(a, b, i);
+	else
+		ft_large_sorting(a, b);
 	ft_view_the_stack(*a, *b); //the_magic_of_visualization
 	//ft_lstclear_for_ps(a); //when you're done, don't forget to clear the list
 	// ft_lstclear_for_ps(b); //when you're done, don't forget to clear the list

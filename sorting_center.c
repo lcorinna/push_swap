@@ -6,7 +6,7 @@
 /*   By: lcorinna <lcorinna@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/15 16:17:56 by lcorinna          #+#    #+#             */
-/*   Updated: 2022/01/17 14:07:23 by lcorinna         ###   ########.fr       */
+/*   Updated: 2022/01/26 11:20:59 by lcorinna         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,27 +14,27 @@
 
 void	ft_sort_for_two(t_list **lst)
 {
-	if ((*lst)->content > (*lst)->next->content)
+	if ((*lst)->num > (*lst)->next->num)
 		ft_sa(lst);
 }
 
 void	ft_sort_for_thee(t_list **lst)
 {
-	if ((*lst)->content < (*lst)->next->content \
-	&& (*lst)->next->content < (*lst)->next->next->content) //123
+	if ((*lst)->num < (*lst)->next->num \
+	&& (*lst)->next->num < (*lst)->next->next->num) //123
 		return ;
-	if ((*lst)->content > (*lst)->next->content \
-	&& (*lst)->next->content > (*lst)->next->next->content) //321 done
+	if ((*lst)->num > (*lst)->next->num \
+	&& (*lst)->next->num > (*lst)->next->next->num) //321 done
 	{
 		ft_sa(lst);
 		ft_rra(lst);
 	}
-	else if ((*lst)->content > (*lst)->next->next->content && \
-	(*lst)->next->content < (*lst)->next->next->content) //312 done
+	else if ((*lst)->num > (*lst)->next->next->num && \
+	(*lst)->next->num < (*lst)->next->next->num) //312 done
 		ft_ra(lst);
-	else if ((*lst)->content > (*lst)->next->next->content) //231 done
+	else if ((*lst)->num > (*lst)->next->next->num) //231 done
 		ft_rra(lst);
-	else if ((*lst)->next->content > (*lst)->next->next->content) //132 done
+	else if ((*lst)->next->num > (*lst)->next->next->num) //132 done
 	{
 		ft_rra(lst);
 		ft_sa(lst);
@@ -48,14 +48,14 @@ void	ft_sort_for_four(t_list **a, t_list **b, long long i)
 	t_list		*tmp;
 
 	tmp = *a;
-	i = tmp->content;
+	i = tmp->num;
 	while (tmp->next)
 	{
-		if (tmp->next && i > tmp->next->content)
-			i = tmp->next->content;
+		if (tmp->next && i > tmp->next->num)
+			i = tmp->next->num;
 		tmp = tmp->next;
 	}
-	if (i == tmp->content)
+	if (i == tmp->num)
 		ft_rra(a);
 	else
 		ft_sorting_assistant(tmp, a, i);
@@ -69,14 +69,14 @@ void	ft_sort_for_five(t_list **a, t_list **b, long long i)
 	t_list		*tmp;
 
 	tmp = *a;
-	i = tmp->content;
+	i = tmp->num;
 	while (tmp->next)
 	{
-		if (tmp->next && i < tmp->next->content)
-			i = tmp->next->content;
+		if (tmp->next && i < tmp->next->num)
+			i = tmp->next->num;
 		tmp = tmp->next;
 	}
-	if (i == tmp->content)
+	if (i == tmp->num)
 		ft_rra(a);
 	else
 		ft_sorting_assistant(tmp, a, i);
@@ -89,7 +89,7 @@ void	ft_sort_for_five(t_list **a, t_list **b, long long i)
 void	ft_sorting_assistant(t_list *tmp, t_list **a, long long i)
 {
 	tmp = *a;
-	while (i != tmp->content)
+	while (i != tmp->num)
 	{
 		tmp = tmp->next;
 		ft_ra(a);
