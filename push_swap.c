@@ -6,7 +6,7 @@
 /*   By: lcorinna <lcorinna@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/04 15:13:04 by lcorinna          #+#    #+#             */
-/*   Updated: 2022/01/26 17:48:01 by lcorinna         ###   ########.fr       */
+/*   Updated: 2022/01/27 12:49:33 by lcorinna         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,7 +68,7 @@ void	ft_push_swap(t_list **a, t_list **b)
 		ft_sort_for_five(a, b, i);
 	else
 		ft_large_sorting(a, b);
-	ft_view_the_stack(*a, *b); //the_magic_of_visualization
+	// ft_view_the_stack(*a, *b); //the_magic_of_visualization
 	//ft_lstclear_for_ps(a); //when you're done, don't forget to clear the list
 	// ft_lstclear_for_ps(b); //when you're done, don't forget to clear the list
 	ft_chek_on_sort(a);
@@ -92,7 +92,7 @@ int	main(int argc, char **argv)
 	if (argc < 2)
 		return (0);
 	ft_mk_lst(argv, &a, n);
-	ft_view_the_stack(a, b); //the_magic_of_visualization
+	// ft_view_the_stack(a, b); //the_magic_of_visualization
 	if (ft_chek_on_sort(&a))
 		ft_sort_done(&a);
 	ft_push_swap(&a, &b);

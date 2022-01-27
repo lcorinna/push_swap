@@ -6,7 +6,7 @@
 /*   By: lcorinna <lcorinna@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/16 13:07:22 by lcorinna          #+#    #+#             */
-/*   Updated: 2022/01/26 19:04:20 by lcorinna         ###   ########.fr       */
+/*   Updated: 2022/01/27 12:48:58 by lcorinna         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,6 @@ void	ft_malloc_not_allocate(char *str, int i)
 void	ft_sort_done(t_list **lst)
 {
 	ft_lstclear_for_ps(lst);
-	write(2, "\nsort done\n\n\n", 13); //delete this line
+	// write(2, "\nsort done\n\n\n", 13); //delete this line
 	exit (19);
 }
