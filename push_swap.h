@@ -6,7 +6,7 @@
 /*   By: lcorinna <lcorinna@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/06 16:30:55 by lcorinna          #+#    #+#             */
-/*   Updated: 2022/01/27 11:58:44 by lcorinna         ###   ########.fr       */
+/*   Updated: 2022/01/27 18:15:34 by lcorinna         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,8 +60,6 @@ void		ft_large_sorting(t_list **a, t_list **b);
 void		ft_make_push(t_list **a, t_list **b, int med, int max);
 void		ft_return(t_list **a, t_list **b);
 t_list		*ft_adding_score(t_list **a, t_list **b);
-void		ft_make_push_return(t_list **a, t_list **b, \
-			t_list	*t_a_last, int luck);
 
 void		ft_find_med(int *size);
 void		ft_assign_an_index(t_list **a, int *j, int size);
@@ -69,10 +67,16 @@ void		ft_find_min_max(t_list **a, int *min, int *max, int *med);
 
 void		ft_lift_up(t_list **b, int flag, int size);
 void		ft_zero_index(t_list **a);
-void		working_on_score(t_list **t_a, t_list **t_b);
+void		ft_working_on_score(t_list **t_a, t_list **t_b);
+void		ft_changing_the_index(t_list **lst, int flag, int i, int remains);
+void		ft_assistant_for_score(t_list **b, t_list **a, t_list **t_a_last);
+
+void		ft_make_push_return(t_list **a, t_list **b, \
+			t_list	*t_a_last, int luck);
+
+void		ft_lowest_score(t_list **b, int *luck, int *turn_b);
+void		ft_only_turn_b(t_list **b, int *turn_b);
+void		ft_only_turn_a(t_list **a, int *turn_a);
+void		ft_turn_both_value(t_list **a, t_list **b, int turn_a, int turn_b);
 
 #endif
-
-// ./push_swap 45 56 47 23 22 37 3 64 73 28 27 46 90 59 36 58 13 17 15 24
-
-// ./push_swap 41 -10 62 22 -61 -27 92 75 -30 -49 -51 9 -20 70 -48 -57 23 -69 -39 -31 74 19 33 42 -85 -38 10 46 -56 -97 -67 -8 -2 -16 31 38 56 -76 100 -45 44 -64 29 73 94 90 87 -43 51 64 -13 63 95 -4 -74 -99 59 78 -5 -24 27 -86 58 -1 -94 20 -63 -54 -87 83 -55 -60 48 -95 -80 81 61 7 -84 0 -17 93 71 -25 4 -73 15 -70 -7 -78 -89 26 -90 65 17 5 25 -6 1 -35

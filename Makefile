@@ -6,7 +6,7 @@
 #    By: lcorinna <lcorinna@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/01/11 14:43:07 by lcorinna          #+#    #+#              #
-#    Updated: 2022/01/23 13:56:22 by lcorinna         ###   ########.fr        #
+#    Updated: 2022/01/27 13:51:09 by lcorinna         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,7 +14,7 @@ NAME_S = push_swap
 
 PUSH_SWAP = push_swap.c rotate_down.c rotate_up.c swap_and_push.c pars.c \
 working_with_a_list.c check.c sorting_center.c exit.c large_sorting_room.c \
-search_functions.c part_of_a_large_sorting.c
+search_functions.c the_first_part_b_s.c the_second_part_b_s.c 
 
 OBJ_PS = $(PUSH_SWAP:.c=.o)
 
@@ -27,8 +27,7 @@ LIBFT = libft.a
 all: $(LIBFT) $(NAME_S)
 
 $(LIBFT):
-	#make -C $(PATH_LIBFT)
-	make bonus -C $(PATH_LIBFT)
+	make -C $(PATH_LIBFT)
 	cp $(PATH_LIBFT)$(LIBFT) $(LIBFT)
 
 $(NAME_S): $(OBJ_PS)
@@ -48,16 +47,3 @@ fclean: clean
 re: fclean all
 
 .PHONY: all clean fclean re
-
-# addprefix
-# $@ - это имя создаваемой цели
-
-# $< первое предварительное условие (обычно исходный файл)
-
-# $?: Имена всех предварительных требований, 
-# которые являются более новыми, чем цель, разделенные пробелами.
-
-# $^: имена файлов всех предварительных требований, разделенные пробелами. 
-# В этом списке удалены повторяющиеся имена файлов, 
-# поскольку для большинства целей, таких как компиляция, 
-# копирование и т. д., дубликаты не нужны.

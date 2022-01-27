@@ -6,7 +6,7 @@
 /*   By: lcorinna <lcorinna@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/15 16:17:56 by lcorinna          #+#    #+#             */
-/*   Updated: 2022/01/26 11:20:59 by lcorinna         ###   ########.fr       */
+/*   Updated: 2022/01/27 18:09:49 by lcorinna         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,25 +21,25 @@ void	ft_sort_for_two(t_list **lst)
 void	ft_sort_for_thee(t_list **lst)
 {
 	if ((*lst)->num < (*lst)->next->num \
-	&& (*lst)->next->num < (*lst)->next->next->num) //123
+	&& (*lst)->next->num < (*lst)->next->next->num)
 		return ;
 	if ((*lst)->num > (*lst)->next->num \
-	&& (*lst)->next->num > (*lst)->next->next->num) //321 done
+	&& (*lst)->next->num > (*lst)->next->next->num)
 	{
 		ft_sa(lst);
 		ft_rra(lst);
 	}
 	else if ((*lst)->num > (*lst)->next->next->num && \
-	(*lst)->next->num < (*lst)->next->next->num) //312 done
+	(*lst)->next->num < (*lst)->next->next->num)
 		ft_ra(lst);
-	else if ((*lst)->num > (*lst)->next->next->num) //231 done
+	else if ((*lst)->num > (*lst)->next->next->num)
 		ft_rra(lst);
-	else if ((*lst)->next->num > (*lst)->next->next->num) //132 done
+	else if ((*lst)->next->num > (*lst)->next->next->num)
 	{
 		ft_rra(lst);
 		ft_sa(lst);
 	}
-	else //213 done
+	else
 		ft_sa(lst);
 }
 

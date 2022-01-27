@@ -6,7 +6,7 @@
 /*   By: lcorinna <lcorinna@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/11 14:54:48 by lcorinna          #+#    #+#             */
-/*   Updated: 2022/01/17 14:32:48 by lcorinna         ###   ########.fr       */
+/*   Updated: 2022/01/27 18:08:31 by lcorinna         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,7 @@ long long	ft_atoi_for_ps(char *s)
 
 	res = 0;
 	i = 0;
-	while ((s[i] == 32) || (s[i] > 8 && s[i] < 14)) //check this
+	while ((s[i] == 32) || (s[i] > 8 && s[i] < 14))
 		i++;
 	j = i;
 	while (s[j])

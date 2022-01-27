@@ -6,52 +6,11 @@
 /*   By: lcorinna <lcorinna@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/04 15:13:04 by lcorinna          #+#    #+#             */
-/*   Updated: 2022/01/27 12:49:33 by lcorinna         ###   ########.fr       */
+/*   Updated: 2022/01/27 18:14:17 by lcorinna         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
-
-void	ft_view_the_stack(t_list *a, t_list *b) //promise me that before defending the project, you will kill me
-{
-	int		line;
-	int		i;
-	int		j;
-
-	i = ft_lstsize(a);
-	j = ft_lstsize(b);
-	if (j > i)
-		i = j;
-	line = 1;
-	printf("_____________________________________________________________\n\n");
-	printf("stack		A	index	score		B	index	score\n\n");
-	while (i != 0)
-	{
-		printf("%d:", line);
-		if (a)
-		{
-			printf("		%lld", a->num);
-			printf("	%d", a->index);
-			printf("	%d", a->score);
-			a = a->next;
-		}
-		else
-			printf("				");
-		if (b)
-		{
-			printf("		%lld", b->num);
-			printf("	%d", b->index);
-			printf("	%d\n", b->score);
-			b = b->next;
-		}
-		else
-			printf("\n");
-		i--;
-		line++;
-	}
-	printf("_____________________________________________________________\n\n");
-	return ;
-}
 
 void	ft_push_swap(t_list **a, t_list **b)
 {
@@ -68,9 +27,6 @@ void	ft_push_swap(t_list **a, t_list **b)
 		ft_sort_for_five(a, b, i);
 	else
 		ft_large_sorting(a, b);
-	// ft_view_the_stack(*a, *b); //the_magic_of_visualization
-	//ft_lstclear_for_ps(a); //when you're done, don't forget to clear the list
-	// ft_lstclear_for_ps(b); //when you're done, don't forget to clear the list
 	ft_chek_on_sort(a);
 }
 
@@ -92,9 +48,53 @@ int	main(int argc, char **argv)
 	if (argc < 2)
 		return (0);
 	ft_mk_lst(argv, &a, n);
-	// ft_view_the_stack(a, b); //the_magic_of_visualization
 	if (ft_chek_on_sort(&a))
 		ft_sort_done(&a);
 	ft_push_swap(&a, &b);
 	return (0);
 }
+
+/* 
+// ft_view_the_stack(a, b); //the_magic_of_visualization
+
+// void	ft_view_the_stack(t_list *a, t_list *b)
+// {
+// 	int		line;
+// 	int		i;
+// 	int		j;
+
+// 	i = ft_lstsize(a);
+// 	j = ft_lstsize(b);
+// 	if (j > i)
+// 		i = j;
+// 	line = 1;
+// 	printf("_____________________________________________________________\n\n");
+// 	printf("stack		A	index	score		B	index	score\n\n");
+// 	while (i != 0)
+// 	{
+// 		printf("%d:", line);
+// 		if (a)
+// 		{
+// 			printf("		%lld", a->num);
+// 			printf("	%d", a->index);
+// 			printf("	%d", a->score);
+// 			a = a->next;
+// 		}
+// 		else
+// 			printf("				");
+// 		if (b)
+// 		{
+// 			printf("		%lld", b->num);
+// 			printf("	%d", b->index);
+// 			printf("	%d\n", b->score);
+// 			b = b->next;
+// 		}
+// 		else
+// 			printf("\n");
+// 		i--;
+// 		line++;
+// 	}
+// 	printf("_____________________________________________________________\n\n");
+// 	return ;
+// }
+*/
