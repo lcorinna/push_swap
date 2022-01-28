@@ -6,7 +6,7 @@
 #    By: lcorinna <lcorinna@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/01/11 14:43:07 by lcorinna          #+#    #+#              #
-#    Updated: 2022/01/27 13:51:09 by lcorinna         ###   ########.fr        #
+#    Updated: 2022/01/28 12:01:51 by lcorinna         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -18,7 +18,7 @@ search_functions.c the_first_part_b_s.c the_second_part_b_s.c
 
 OBJ_PS = $(PUSH_SWAP:.c=.o)
 
-CFLAGS = -Wall -Wextra -Werror -g -fsanitize=address # Leaks --atExit -- ./push_swap
+CFLAGS = -Wall -Wextra -Werror -g #-fsanitize=address # Leaks --atExit -- ./push_swap
 
 PATH_LIBFT = ./libft/
 

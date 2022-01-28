@@ -6,7 +6,7 @@
 /*   By: lcorinna <lcorinna@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/18 13:02:56 by lcorinna          #+#    #+#             */
-/*   Updated: 2022/01/27 18:05:16 by lcorinna         ###   ########.fr       */
+/*   Updated: 2022/01/28 12:02:53 by lcorinna         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -87,4 +87,21 @@ void	ft_large_sorting(t_list **a, t_list **b)
 	ft_return(a, b);
 	while ((*a)->num != min)
 		ft_ra(a);
+}
+
+void	ft_make_push_return(t_list **a, t_list **b, t_list	*a_last, int luck)
+{
+	t_list		*t_b;
+	t_storage	*data;
+
+	t_b = *b;
+	ft_lowest_score(b, &luck, &data);
+	data->a_last = a_last->num;
+	*b = t_b;
+	if (luck == (*b)->score && data->turn_b == (*b)->index \
+	&& (*a)->num < (*b)->num && (*b)->num < data->a_last)
+		ft_pa(a, b);
+	else
+		ft_part_return(a, b, &data, luck);
+	free (data);
 }

@@ -6,7 +6,7 @@
 /*   By: lcorinna <lcorinna@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/21 16:55:30 by lcorinna          #+#    #+#             */
-/*   Updated: 2022/01/26 19:01:50 by lcorinna         ###   ########.fr       */
+/*   Updated: 2022/01/28 12:05:03 by lcorinna         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -73,5 +73,39 @@ void	ft_find_min_max(t_list **a, int *min, int *max, int *med)
 		else if (tmp->index == size)
 			*med = tmp->num;
 		tmp = tmp->next;
+	}
+}
+
+void	ft_only_turn_b(t_list **b, t_storage **data)
+{
+	while ((*data)->turn_b != 0)
+	{
+		if ((*data)->turn_b < 0)
+		{
+			ft_rrb(b);
+			(*data)->turn_b++;
+		}
+		else
+		{
+			ft_rb(b);
+			(*data)->turn_b--;
+		}
+	}
+}
+
+void	ft_only_turn_a(t_list **a, t_storage **data)
+{
+	while ((*data)->turn_a != 0)
+	{
+		if ((*data)->turn_a < 0)
+		{
+			ft_rra(a);
+			(*data)->turn_a++;
+		}
+		else
+		{
+			ft_ra(a);
+			(*data)->turn_a--;
+		}
 	}
 }

@@ -6,19 +6,24 @@
 /*   By: lcorinna <lcorinna@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/06 16:30:55 by lcorinna          #+#    #+#             */
-/*   Updated: 2022/01/27 18:15:34 by lcorinna         ###   ########.fr       */
+/*   Updated: 2022/01/28 12:16:32 by lcorinna         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef PUSH_SWAP_H
 # define PUSH_SWAP_H
 
-# include <stdio.h> //printf
+// # include <stdio.h> //printf
 # include "libft/libft.h"
-# include <stdlib.h>
-# include <unistd.h>
 
-void		ft_view_the_stack(t_list *a, t_list *b);  //promise me that before defending the project, you will kill me
+typedef struct s_storage
+{
+	int	a_last;
+	int	turn_b;
+	int	turn_a;
+}	t_storage;
+
+// void		ft_view_the_stack(t_list *a, t_list *b);
 void		ft_push_swap(t_list **a, t_list **b);
 
 long long	ft_number(char *done);
@@ -40,6 +45,7 @@ void		ft_rrb(t_list **lst);
 void		ft_rrr(t_list **a, t_list **b);
 
 t_list		*ft_lstnew_for_ps(long long content);
+t_storage	*ft_lstnew_for_ps_two(int content);
 void		ft_lstclear_for_ps(t_list **lst);
 void		ft_mk_lst(char **argv, t_list **lst, int n);
 
@@ -60,10 +66,14 @@ void		ft_large_sorting(t_list **a, t_list **b);
 void		ft_make_push(t_list **a, t_list **b, int med, int max);
 void		ft_return(t_list **a, t_list **b);
 t_list		*ft_adding_score(t_list **a, t_list **b);
+void		ft_make_push_return(t_list **a, t_list **b, \
+												t_list	*t_a_last, int luck);
 
 void		ft_find_med(int *size);
 void		ft_assign_an_index(t_list **a, int *j, int size);
 void		ft_find_min_max(t_list **a, int *min, int *max, int *med);
+void		ft_only_turn_b(t_list **b, t_storage **data);
+void		ft_only_turn_a(t_list **a, t_storage **data);
 
 void		ft_lift_up(t_list **b, int flag, int size);
 void		ft_zero_index(t_list **a);
@@ -71,12 +81,9 @@ void		ft_working_on_score(t_list **t_a, t_list **t_b);
 void		ft_changing_the_index(t_list **lst, int flag, int i, int remains);
 void		ft_assistant_for_score(t_list **b, t_list **a, t_list **t_a_last);
 
-void		ft_make_push_return(t_list **a, t_list **b, \
-			t_list	*t_a_last, int luck);
-
-void		ft_lowest_score(t_list **b, int *luck, int *turn_b);
-void		ft_only_turn_b(t_list **b, int *turn_b);
-void		ft_only_turn_a(t_list **a, int *turn_a);
-void		ft_turn_both_value(t_list **a, t_list **b, int turn_a, int turn_b);
+void		ft_lowest_score(t_list **b, int *luck, t_storage **data);
+void		ft_turn_both_value(t_list **a, t_list **b, t_storage **data);
+void		ft_part_return(t_list **a, t_list **b, t_storage **data, int luck);
+void		ft_spin_stack_a(t_list **a, t_list **b, t_storage **data, int luck);
 
 #endif

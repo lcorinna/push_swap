@@ -6,7 +6,7 @@
 /*   By: lcorinna <lcorinna@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/11 14:50:14 by lcorinna          #+#    #+#             */
-/*   Updated: 2022/01/26 11:20:06 by lcorinna         ###   ########.fr       */
+/*   Updated: 2022/01/28 11:31:20 by lcorinna         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,19 @@ t_list	*ft_lstnew_for_ps(long long content)
 	(*f_element).score = 0;
 	f_element->next = NULL;
 	return (f_element);
+}
+
+t_storage	*ft_lstnew_for_ps_two(int content)
+{
+	t_storage	*new;
+
+	new = (t_storage *) malloc(sizeof(t_storage));
+	if (new == NULL)
+		ft_malloc_not_allocate("Error malloc\n", 2);
+	(*new).a_last = 0;
+	(*new).turn_b = content;
+	(*new).turn_a = 0;
+	return (new);
 }
 
 void	ft_lstclear_for_ps(t_list **lst)
