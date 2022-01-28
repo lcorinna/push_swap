@@ -6,14 +6,13 @@
 /*   By: lcorinna <lcorinna@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/06 16:30:55 by lcorinna          #+#    #+#             */
-/*   Updated: 2022/01/28 12:16:32 by lcorinna         ###   ########.fr       */
+/*   Updated: 2022/01/28 15:40:16 by lcorinna         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef PUSH_SWAP_H
 # define PUSH_SWAP_H
 
-// # include <stdio.h> //printf
 # include "libft/libft.h"
 
 typedef struct s_storage
@@ -23,12 +22,11 @@ typedef struct s_storage
 	int	turn_a;
 }	t_storage;
 
-// void		ft_view_the_stack(t_list *a, t_list *b);
 void		ft_push_swap(t_list **a, t_list **b);
 
 long long	ft_number(char *done);
 long long	ft_atoi_for_ps(char *s);
-int			ft_pars(char **argv, int n);
+void		ft_pars(char **argv, int n, int counter);
 
 void		ft_sa(t_list **a);
 void		ft_sb(t_list **b);

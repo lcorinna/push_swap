@@ -6,7 +6,7 @@
 /*   By: lcorinna <lcorinna@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/11 14:54:48 by lcorinna          #+#    #+#             */
-/*   Updated: 2022/01/27 18:08:31 by lcorinna         ###   ########.fr       */
+/*   Updated: 2022/01/28 15:55:02 by lcorinna         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,27 +56,31 @@ long long	ft_atoi_for_ps(char *s)
 	return (res);
 }
 
-int	ft_pars(char **argv, int n)
+void	ft_pars(char **argv, int n, int counter)
 {
 	int		j;
 	int		i;
+	int		m;
 
 	while (argv[n])
 	{
 		if ((ft_atoi_for_ps(argv[n++])) > 2147483647)
 			ft_input_error("Error\n", 2);
 	}
-	n = 0;
-	while (argv[n + 1])
+	while (argv[counter])
 	{
-		j = -1;
-		i = -1;
-		while (argv[n][++i] == argv[n + 1][++j])
+		m = counter + 1;
+		while (argv[m])
 		{
-			if (argv[n][i] == '\0' && argv[n + 1][j] == '\0')
-				ft_input_error("Error\n", 2);
+			j = -1;
+			i = -1;
+			while (argv[counter][++i] == argv[m][++j])
+			{
+				if (argv[counter][i] == '\0' && argv[m][j] == '\0')
+					ft_input_error("Error\n", 2);
+			}
+			m++;
 		}
-		n++;
+		counter++;
 	}
-	return (0);
 }

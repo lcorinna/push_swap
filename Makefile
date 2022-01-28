@@ -6,7 +6,7 @@
 #    By: lcorinna <lcorinna@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/01/11 14:43:07 by lcorinna          #+#    #+#              #
-#    Updated: 2022/01/28 12:01:51 by lcorinna         ###   ########.fr        #
+#    Updated: 2022/01/28 14:23:02 by lcorinna         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -18,18 +18,18 @@ search_functions.c the_first_part_b_s.c the_second_part_b_s.c
 
 OBJ_PS = $(PUSH_SWAP:.c=.o)
 
-CFLAGS = -Wall -Wextra -Werror -g #-fsanitize=address # Leaks --atExit -- ./push_swap
+CFLAGS = -Wall -Wextra -Werror #-g -fsanitize=address # Leaks --atExit -- ./push_swap
 
 PATH_LIBFT = ./libft/
 
 LIBFT = libft.a 
 
-all: $(LIBFT) $(NAME_S)
+all: libmake $(NAME_S)
 
-$(LIBFT):
+libmake: 
 	make -C $(PATH_LIBFT)
-	cp $(PATH_LIBFT)$(LIBFT) $(LIBFT)
-
+	@cp $(PATH_LIBFT)$(LIBFT) $(LIBFT)
+		
 $(NAME_S): $(OBJ_PS)
 	gcc $(CFLAGS) $(LIBFT) $(OBJ_PS) -o $@
 

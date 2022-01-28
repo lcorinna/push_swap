@@ -6,7 +6,7 @@
 /*   By: lcorinna <lcorinna@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/04 15:13:04 by lcorinna          #+#    #+#             */
-/*   Updated: 2022/01/28 12:02:12 by lcorinna         ###   ########.fr       */
+/*   Updated: 2022/01/28 15:39:53 by lcorinna         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,9 @@ int	main(int argc, char **argv)
 	t_list	*a;
 	t_list	*b;
 	int		n;
+	int		counter;
 
+	counter = 0;
 	b = NULL;
 	n = 1;
 	if (argc == 2 && ft_strrchr_ps(argv[1], ' '))
@@ -43,8 +45,7 @@ int	main(int argc, char **argv)
 		argv = ft_split(argv[1], ' ');
 		n = 0;
 	}
-	if (ft_pars(argv, n))
-		return (0);
+	ft_pars(argv, n, counter);
 	if (argc < 2)
 		return (0);
 	ft_mk_lst(argv, &a, n);
@@ -54,7 +55,7 @@ int	main(int argc, char **argv)
 	return (0);
 }
 
-/* 
+/*
 ft_view_the_stack(a, b); //the_magic_of_visualization
 
 void	ft_view_the_stack(t_list *a, t_list *b)

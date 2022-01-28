@@ -6,7 +6,7 @@
 #    By: lcorinna <lcorinna@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/10/25 21:27:37 by lcorinna          #+#    #+#              #
-#    Updated: 2022/01/28 12:15:03 by lcorinna         ###   ########.fr        #
+#    Updated: 2022/01/28 14:29:25 by lcorinna         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -19,14 +19,14 @@ O_FILES = $(LIST_1:.c=.o)
 
 all: $(NAME)
 
-$(NAME): $(ALL_O_FILES)
+$(NAME): $(O_FILES)
 	ar rcs $(NAME) $?
 
 %.o: %.c libft.h Makefile
 	gcc -Wall -Wextra -Werror -c $< -o $@
 
 clean:
-	rm -f $(O_FILES) $(O_FILES_FOR_BONUS)
+	rm -f $(O_FILES)
 
 fclean: clean
 	rm -rf $(NAME)
