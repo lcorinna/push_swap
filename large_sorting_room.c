@@ -6,7 +6,7 @@
 /*   By: lcorinna <lcorinna@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/18 13:02:56 by lcorinna          #+#    #+#             */
-/*   Updated: 2022/01/28 12:02:53 by lcorinna         ###   ########.fr       */
+/*   Updated: 2022/02/27 18:28:35 by lcorinna         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,6 +53,8 @@ void	ft_return(t_list **a, t_list **b)
 		tmp_a_last = ft_adding_score(a, b);
 		ft_make_push_return(a, b, tmp_a_last, i);
 	}
+	ft_zero_index(a);
+	ft_lift_up(a, i, size);
 }
 
 void	ft_make_push(t_list **a, t_list **b, int med, int max)
@@ -63,7 +65,7 @@ void	ft_make_push(t_list **a, t_list **b, int med, int max)
 	while (tmp->next->next->next != NULL)
 	{
 		if (tmp->num == max || tmp->index == 0 || tmp->num == med)
-			ft_rra(&tmp);
+			ft_ra(&tmp);
 		else
 		{
 			ft_pb(&tmp, b);
@@ -78,15 +80,31 @@ void	ft_make_push(t_list **a, t_list **b, int med, int max)
 
 void	ft_large_sorting(t_list **a, t_list **b)
 {
-	int	min;
-	int	max;
-	int	med;
+	t_list	*tmp;
+	int		min;
+	int		max;
+	int		med;
 
 	ft_find_min_max(a, &min, &max, &med);
 	ft_make_push(a, b, med, max);
 	ft_return(a, b);
+	tmp = *a;
 	while ((*a)->num != min)
-		ft_ra(a);
+	{
+		*a = (*a)->next;
+	}
+	if ((*a)->index > 0)
+	{
+		*a = tmp;
+		while ((*a)->num != min)
+			ft_ra(a);
+	}
+	else if ((*a)->index < 0)
+	{
+		*a = tmp;
+		while ((*a)->num != min)
+			ft_rra(a);
+	}
 }
 
 void	ft_make_push_return(t_list **a, t_list **b, t_list	*a_last, int luck)

@@ -6,13 +6,14 @@
 /*   By: lcorinna <lcorinna@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/25 22:40:44 by lcorinna          #+#    #+#             */
-/*   Updated: 2022/01/27 18:02:25 by lcorinna         ###   ########.fr       */
+/*   Updated: 2022/02/27 19:32:15 by lcorinna         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef LIBFT_H
 # define LIBFT_H
 
+# include "get_next_line.h"
 # include <stddef.h>
 # include <stdlib.h>
 # include <unistd.h>

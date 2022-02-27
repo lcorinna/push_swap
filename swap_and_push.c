@@ -6,7 +6,7 @@
 /*   By: lcorinna <lcorinna@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/11 14:47:58 by lcorinna          #+#    #+#             */
-/*   Updated: 2022/01/26 17:34:44 by lcorinna         ###   ########.fr       */
+/*   Updated: 2022/02/27 18:51:08 by lcorinna         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,37 +16,46 @@ void	ft_sa(t_list **a)
 {
 	t_list	*tmp;
 
-	tmp = (*a)->next;
-	(*a)->next = tmp->next;
-	tmp->next = (*a);
-	(*a) = tmp;
-	ft_putstr_fd("sa\n", 1);
+	if (*a != NULL && (*a)->next != NULL)
+	{
+		tmp = (*a)->next;
+		(*a)->next = tmp->next;
+		tmp->next = (*a);
+		(*a) = tmp;
+		ft_putstr_fd("sa\n", 1);
+	}
 }
 
 void	ft_sb(t_list **b)
 {
 	t_list	*tmp;
 
-	tmp = (*b)->next;
-	(*b)->next = tmp->next;
-	tmp->next = (*b);
-	(*b) = tmp;
-	ft_putstr_fd("sb\n", 1);
+	if (*b != NULL && (*b)->next != NULL)
+	{
+		tmp = (*b)->next;
+		(*b)->next = tmp->next;
+		tmp->next = (*b);
+		(*b) = tmp;
+		ft_putstr_fd("sb\n", 1);
+	}
 }
 
 void	ft_ss(t_list **a, t_list **b)
 {
 	t_list	*tmp;
 
-	tmp = (*a)->next;
-	(*a)->next = tmp->next;
-	tmp->next = (*a);
-	(*a) = tmp;
-	tmp = (*b)->next;
-	(*b)->next = tmp->next;
-	tmp->next = (*b);
-	(*b) = tmp;
-	ft_putstr_fd("ss\n", 1);
+	if (*a != NULL && *b != NULL && (*a)->next != NULL && (*b)->next != NULL)
+	{
+		tmp = (*a)->next;
+		(*a)->next = tmp->next;
+		tmp->next = (*a);
+		(*a) = tmp;
+		tmp = (*b)->next;
+		(*b)->next = tmp->next;
+		tmp->next = (*b);
+		(*b) = tmp;
+		ft_putstr_fd("ss\n", 1);
+	}
 }
 
 void	ft_pb(t_list **a, t_list **b)

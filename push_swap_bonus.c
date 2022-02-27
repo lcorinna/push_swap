@@ -1,34 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.c                                        :+:      :+:    :+:   */
+/*   push_swap_bonus.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lcorinna <lcorinna@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/04 15:13:04 by lcorinna          #+#    #+#             */
-/*   Updated: 2022/02/27 18:53:26 by lcorinna         ###   ########.fr       */
+/*   Updated: 2022/02/27 19:38:06 by lcorinna         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
-
-void	ft_push_swap(t_list **a, t_list **b)
-{
-	long long	i;
-
-	i = (long long) ft_lstsize(*a);
-	if (i == 2)
-		ft_sort_for_two(a);
-	else if (i == 3)
-		ft_sort_for_thee(a);
-	else if (i == 4)
-		ft_sort_for_four(a, b, i);
-	else if (i == 5)
-		ft_sort_for_five(a, b, i);
-	else
-		ft_large_sorting(a, b);
-	ft_lstclear_for_ps(a);
-}
 
 int	main(int argc, char **argv)
 {
@@ -51,13 +33,13 @@ int	main(int argc, char **argv)
 	if (argc < 2)
 		return (0);
 	ft_mk_lst(argv, &a, n);
+	ft_view_the_stack(a, b); //the_magic_of_visualization
 	if (ft_chek_on_sort(&a))
 		ft_sort_done(&a);
-	ft_push_swap(&a, &b);
 	return (0);
 }
 
-/* ft_view_the_stack(a, b); //the_magic_of_visualization
+// ft_view_the_stack(a, b); //the_magic_of_visualization
 
 void	ft_view_the_stack(t_list *a, t_list *b)
 {
@@ -98,4 +80,4 @@ void	ft_view_the_stack(t_list *a, t_list *b)
 	}
 	printf("_____________________________________________________________\n\n");
 	return ;
-} */
+}
