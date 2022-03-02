@@ -6,11 +6,11 @@
 /*   By: lcorinna <lcorinna@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/28 12:09:04 by lcorinna          #+#    #+#             */
-/*   Updated: 2022/02/27 19:21:41 by lcorinna         ###   ########.fr       */
+/*   Updated: 2022/03/02 15:21:04 by lcorinna         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "get_next_line.h"
+#include "libft.h"
 
 char	*ft_trim_for_str(char *res)
 {

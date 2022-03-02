@@ -1,31 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   exit.c                                             :+:      :+:    :+:   */
+/*   ft_strncmp.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lcorinna <lcorinna@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/01/16 13:07:22 by lcorinna          #+#    #+#             */
-/*   Updated: 2022/03/02 15:13:23 by lcorinna         ###   ########.fr       */
+/*   Created: 2021/10/16 20:26:32 by lcorinna          #+#    #+#             */
+/*   Updated: 2022/03/02 17:14:37 by lcorinna         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "libft.h"
 
-void	ft_input_error(char *str, int i)
-{	
-	ft_putstr_fd(str, i);
-	exit (1);
-}
-
-void	ft_malloc_not_allocate(char *str, int i)
+int	ft_strncmp(const char *s1, const char *s2, size_t n)
 {
-	ft_putstr_fd(str, i);
-	exit (1);
-}
+	int				i;
+	unsigned char	*a;
+	unsigned char	*b;
+	int				l;
 
-void	ft_sort_done(t_list **lst)
-{
-	ft_lstclear_for_ps(lst);
-	exit (0);
+	a = (unsigned char *) s1;
+	b = (unsigned char *) s2;
+	i = 0;
+	l = (int) n;
+	if (l < 0)
+		return (-1);
+	while ((i < l) && (a[i] != '\0' || b[i] != '\0'))
+	{
+		if (a[i] != b[i])
+			return (a[i] - b[i]);
+		i++;
+	}
+	return (0);
 }

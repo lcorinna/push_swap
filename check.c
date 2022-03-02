@@ -6,7 +6,7 @@
 /*   By: lcorinna <lcorinna@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/07 16:00:04 by lcorinna          #+#    #+#             */
-/*   Updated: 2022/01/26 11:18:41 by lcorinna         ###   ########.fr       */
+/*   Updated: 2022/03/02 19:02:28 by lcorinna         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,6 @@ int	ft_chek_on_sort(t_list **lst)
 			return (0);
 		tmp = tmp->next;
 	}
-	ft_sort_done(lst);
 	return (1);
 }
 

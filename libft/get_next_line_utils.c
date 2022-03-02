@@ -6,11 +6,11 @@
 /*   By: lcorinna <lcorinna@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/21 19:26:19 by lcorinna          #+#    #+#             */
-/*   Updated: 2022/02/27 19:23:58 by lcorinna         ###   ########.fr       */
+/*   Updated: 2022/03/02 15:21:09 by lcorinna         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "get_next_line.h"
+#include "libft.h"
 
 size_t	ft_strlen_gnl(char *r)
 {
